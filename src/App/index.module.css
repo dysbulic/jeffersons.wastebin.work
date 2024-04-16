@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'Angelissa';
+  src: url('./Angelissa.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Alaskha';
+  src: url('./Alaskha.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Astallya Script';
+  src: url('./Astallya Script.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Holiday’s Font';
+  src: url('./Holiday’s Font.woff') format('woff');
+}
+
+:root {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+#token-value {
+  & h1 #Jefferson’s-Wastebasket {
+    font-family: Alaskha;
+    font-size: 8rem;
+
+    & #Jefferson {
+      font-family: Angelissa;
+      font-size: 11.5rem;
+      font-weight: 700;
+      -webkit-text-stroke: 0.025rem #FF0;
+    }
+  }
+}
+
+#leavings {
+  & h2 {
+    font-family: 'Astallya Script';
+    font-weight: 900;
+    font-size: 7rem;
+    -webkit-text-stroke: 0.25rem #0F0;
+  }
+
+  & p {
+    text-align: justify;
+    text-indent: 2rem;
+    font-family: 'Holiday’s Font';
+    font-size: 2.5rem;
+    font-weight: 700;
+    -webkit-text-stroke: 0.05rem #F0F;
+  }
+}
+
+#artifacts {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
