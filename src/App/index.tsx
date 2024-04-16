@@ -3,7 +3,10 @@ import tyl from './index.module.css'
 
 export const App = () => {
   const params = new URLSearchParams(window.location.search)
-  console.debug({ params })
+  params.forEach((value, name) => {
+    console.debug({ name, value })
+  })
+
   return (
     <article id={tyl.artifacts}>
       <Header

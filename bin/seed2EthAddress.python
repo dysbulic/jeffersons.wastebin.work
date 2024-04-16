@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+from bip_utils import \
+  Bip39MnemonicGenerator, Bip39SeedGenerator, \
+    Bip39WordsNum, Bip44, Bip44Coins, Bip44Changes
+from eth_account import Account
+
+mnemonic = Bip39MnemonicGenerator().FromWordsNumber(Bip39WordsNum.WORDS_NUM_12)
+print(f"Ethereum Address: {mnemonic}")
+seed = Bip39SeedGenerator(mnemonic).Generate()
+bip44_mst = Bip44.FromSeed(seed, Bip44Coins.ETHEREUM)
+bip44_acc = bip44_mst.Purpose().Coin().Account(0)
+bip44_change = bip44_acc.Change(Bip44Changes.CHAIN_EXT)
+bip44_addr = bip44_change.AddressIndex(0)
+private_key_bytes = bip44_addr.PrivateKey().Raw().ToBytes()
+eth_account = Account.from_key(private_key_bytes)
+eth_address = eth_account.address
+
+print(f"Ethereum Address: {eth_address}")
